@@ -9,14 +9,16 @@ export default function Footer() {
       <div className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px w-2/3 bg-gold-line" />
       <div className="container-luxe grid gap-14 py-20 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <Logo />
-          <p className="mt-6 max-w-md text-sm leading-relaxed text-ivory/65">
+          <div className="flex justify-center lg:justify-start">
+            <Logo size="footer" />
+          </div>
+          <p className="mt-6 max-w-md text-center text-sm leading-relaxed text-ivory/65 lg:text-left">
             Ran Kesari Camping designs and installs luxury Swiss tents, royal
             desert camps and end-to-end hospitality infrastructure for
             destination weddings, festivals, retreats and tourism — anywhere in
             India.
           </p>
-          <div className="mt-8 flex items-center gap-3">
+          <div className="mt-8 flex items-center justify-center gap-3 lg:justify-start">
             <a
               href={site.instagram}
               target="_blank"

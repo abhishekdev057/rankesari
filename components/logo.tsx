@@ -7,18 +7,24 @@ import { BRAND } from "@/lib/brand-images";
 /**
  * Brand logo. Tries the photo logo at /brand/logo.png first; if it fails to
  * load (file not yet uploaded), falls back to the gold-on-black SVG mark.
- *
- * - `variant="full"`  → photo logo with text (default, used in navbar / footer)
- * - `variant="mark"`  → just the icon mark
  */
+const SIZES = {
+  default: "h-20 sm:h-24 lg:h-[104px]",
+  footer: "h-32 sm:h-36 lg:h-24",
+  mark: "h-12"
+} as const;
+
 export default function Logo({
   className,
-  variant = "full"
+  variant = "full",
+  size = "default"
 }: {
   className?: string;
   variant?: "full" | "mark";
+  size?: keyof typeof SIZES;
 }) {
   const [photoFailed, setPhotoFailed] = useState(false);
+  const dimension = variant === "mark" ? SIZES.mark : SIZES[size];
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
@@ -28,10 +34,7 @@ export default function Logo({
           src={BRAND.logo}
           alt="Ran Kesari Camping"
           onError={() => setPhotoFailed(true)}
-          className={cn(
-            "block w-auto select-none",
-            variant === "full" ? "h-16 sm:h-20 lg:h-[88px]" : "h-12"
-          )}
+          className={cn("block w-auto select-none", dimension)}
         />
       ) : (
         <FallbackMark withText={variant === "full"} />

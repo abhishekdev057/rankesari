@@ -82,17 +82,15 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-ivory/60"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 text-ivory/60 sm:bottom-10"
+          aria-hidden="true"
         >
-          <div className="flex flex-col items-center gap-2 text-[10px] uppercase tracking-widest2">
-            Scroll
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-            >
-              <ChevronDown size={14} />
-            </motion.div>
-          </div>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <ChevronDown size={16} />
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>
