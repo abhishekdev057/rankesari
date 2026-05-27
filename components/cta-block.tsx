@@ -3,13 +3,14 @@ import { Section } from "./section";
 import LuxeImage from "./image";
 import { Reveal } from "./reveal";
 import { site } from "@/lib/site";
+import { BRAND } from "@/lib/brand-images";
 
 export default function CTABlock() {
   return (
     <Section className="relative overflow-hidden py-32">
       <div className="absolute inset-0 -z-10">
         <LuxeImage
-          src="/images/cta/cta-bg.jpg"
+          src={BRAND.festivalAerial}
           alt=""
           className="h-full w-full"
         />

@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import LuxeImage from "./image";
+import { BRAND } from "@/lib/brand-images";
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -23,8 +24,8 @@ export default function Hero() {
     >
       <motion.div style={{ scale }} className="absolute inset-0">
         <LuxeImage
-          src="/images/hero/hero.jpg"
-          alt="Royal Swiss tent at twilight in the Thar Desert"
+          src={BRAND.tentCity}
+          alt="Royal Swiss tent city at twilight in the Thar Desert"
           className="h-full w-full"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/30 to-ink" />

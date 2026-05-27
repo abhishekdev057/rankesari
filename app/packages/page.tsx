@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/page-hero";
 import PackagesGrid from "@/components/packages-grid";
 import CTABlock from "@/components/cta-block";
+import { BRAND } from "@/lib/brand-images";
 
 export const metadata: Metadata = {
   title: "Tent Packages — From Classic to Tent City",
@@ -20,7 +21,7 @@ export default function PackagesPage() {
           </>
         }
         subtitle="From a signature couple's suite to a multi-acre luxury city. Every spec is customisable."
-        image="/images/packages/packages-hero.jpg"
+        image={BRAND.maharajaInterior}
       />
       <PackagesGrid />
       <CTABlock />

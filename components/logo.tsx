@@ -1,24 +1,49 @@
-import { cn } from "@/lib/cn";
+"use client";
 
+import { useState } from "react";
+import { cn } from "@/lib/cn";
+import { BRAND } from "@/lib/brand-images";
+
+/**
+ * Brand logo. Tries the photo logo at /brand/logo.png first; if it fails to
+ * load (file not yet uploaded), falls back to the gold-on-black SVG mark.
+ *
+ * - `variant="full"`  → photo logo with text (default, used in navbar / footer)
+ * - `variant="mark"`  → just the icon mark
+ */
 export default function Logo({
   className,
-  mark = false,
-  tone = "gold"
+  variant = "full"
 }: {
   className?: string;
-  mark?: boolean;
-  tone?: "gold" | "ivory";
+  variant?: "full" | "mark";
 }) {
-  const fill = tone === "gold" ? "url(#rk-gold)" : "#f5efe2";
-  const stroke = tone === "gold" ? "url(#rk-gold)" : "#f5efe2";
+  const [photoFailed, setPhotoFailed] = useState(false);
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      <svg
-        viewBox="0 0 64 64"
-        className="h-9 w-9 shrink-0"
-        aria-hidden="true"
-      >
+      {!photoFailed ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={BRAND.logo}
+          alt="Ran Kesari Camping"
+          onError={() => setPhotoFailed(true)}
+          className={cn(
+            "block w-auto select-none",
+            variant === "full" ? "h-12 sm:h-14" : "h-10"
+          )}
+        />
+      ) : (
+        <FallbackMark withText={variant === "full"} />
+      )}
+    </div>
+  );
+}
+
+function FallbackMark({ withText }: { withText: boolean }) {
+  return (
+    <div className="flex items-center gap-3">
+      <svg viewBox="0 0 64 64" className="h-9 w-9 shrink-0" aria-hidden="true">
         <defs>
           <linearGradient id="rk-gold" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#8a6618" />
@@ -28,35 +53,19 @@ export default function Logo({
             <stop offset="100%" stopColor="#8a6618" />
           </linearGradient>
         </defs>
-        {/* Ornate Rajasthani arch frame */}
         <path
           d="M32 4 L58 22 L58 58 L6 58 L6 22 Z"
           fill="none"
-          stroke={stroke}
+          stroke="url(#rk-gold)"
           strokeWidth="0.8"
           opacity="0.65"
         />
-        {/* Tent silhouette */}
-        <path
-          d="M32 14 L52 50 L44 50 L32 30 L20 50 L12 50 Z"
-          fill={fill}
-        />
-        {/* Inner tent door */}
-        <path
-          d="M28 50 Q32 40 36 50 Z"
-          fill="#0a0908"
-        />
-        {/* Crown dot */}
-        <circle cx="32" cy="11" r="1.6" fill={fill} />
-        {/* Base line */}
-        <path
-          d="M10 54 L54 54"
-          stroke={stroke}
-          strokeWidth="0.6"
-          opacity="0.7"
-        />
+        <path d="M32 14 L52 50 L44 50 L32 30 L20 50 L12 50 Z" fill="url(#rk-gold)" />
+        <path d="M28 50 Q32 40 36 50 Z" fill="#0a0908" />
+        <circle cx="32" cy="11" r="1.6" fill="url(#rk-gold)" />
+        <path d="M10 54 L54 54" stroke="url(#rk-gold)" strokeWidth="0.6" opacity="0.7" />
       </svg>
-      {!mark && (
+      {withText && (
         <div className="flex flex-col leading-none">
           <span className="font-display text-[20px] tracking-[0.18em] text-ivory">
             RAN <span className="gold-text">KESARI</span>

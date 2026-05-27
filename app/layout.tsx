@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       "Premium Swiss tents, royal desert camps and end-to-end luxury hospitality infrastructure — installed anywhere in India.",
     url: "https://rankesari.com",
     siteName: "Ran Kesari Camping",
-    images: ["/images/og-cover.jpg"],
+    images: ["/brand/og-cover.jpg"],
     type: "website"
   },
   twitter: {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Ran Kesari — Luxury Desert Camping Infrastructure",
     description:
       "Royal Rajasthan luxury Swiss tents & premium camp infrastructure — installed anywhere.",
-    images: ["/images/og-cover.jpg"]
+    images: ["/brand/og-cover.jpg"]
   },
   icons: { icon: "/favicon.svg" }
 };

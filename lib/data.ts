@@ -1,10 +1,12 @@
+import { BRAND } from "./brand-images";
+
 export const services = [
   {
     slug: "swiss-cottage",
     title: "Luxury Swiss Cottage Tents",
     blurb:
       "Hand-tailored Swiss tents with hardwood floors, attached washrooms and hotel-grade interiors.",
-    image: "/images/services/swiss-cottage.jpg",
+    image: BRAND.canopy,
     points: ["Inbuilt washroom", "Air conditioning", "Hardwood flooring"]
   },
   {
@@ -12,7 +14,7 @@ export const services = [
     title: "Wedding Tent Infrastructure",
     blurb:
       "Complete royal wedding camps — guest suites, dining marquees, mandap and bridal lounges.",
-    image: "/images/services/wedding-tent.jpg",
+    image: BRAND.weddingLit,
     points: ["Bridal suite tents", "Dining marquees", "Decor & lighting"]
   },
   {
@@ -20,7 +22,7 @@ export const services = [
     title: "Event Tent Infrastructure",
     blurb:
       "Modular tent cities for concerts, festivals and large-scale destination events.",
-    image: "/images/services/event-tent.jpg",
+    image: BRAND.dining,
     points: ["Modular layouts", "Backstage & VIP camps", "Power backup"]
   },
   {
@@ -28,7 +30,7 @@ export const services = [
     title: "Corporate Retreat Camps",
     blurb:
       "Confidential desert retreats — luxury accommodation paired with meeting pavilions.",
-    image: "/images/services/corporate-retreat.jpg",
+    image: BRAND.twinInterior,
     points: ["Conference pavilions", "Executive suite tents", "Private dining"]
   },
   {
@@ -36,7 +38,7 @@ export const services = [
     title: "Festival & Concert Stay",
     blurb:
       "Scalable luxury accommodation for hundreds of guests at remote festival locations.",
-    image: "/images/services/festival-stay.jpg",
+    image: BRAND.festivalAerial,
     points: ["Tent cities at scale", "Hospitality teams", "24/7 operations"]
   },
   {
@@ -44,7 +46,7 @@ export const services = [
     title: "Royal Desert Camps",
     blurb:
       "Signature Rajasthani heritage camps in the Thar — built around dunes, sunsets and stars.",
-    image: "/images/services/royal-desert.jpg",
+    image: BRAND.royalTent,
     points: ["Dune-side setups", "Royal Rajasthani decor", "Cultural experiences"]
   }
 ];
@@ -53,7 +55,7 @@ export const packages = [
   {
     name: "Classic Luxury Tent",
     tagline: "Refined comfort. Effortless elegance.",
-    image: "/images/packages/classic-luxury.jpg",
+    image: BRAND.twinInterior,
     size: "16 × 16 ft",
     capacity: "2 Guests",
     ac: true,
@@ -72,7 +74,7 @@ export const packages = [
   {
     name: "Royal Swiss Cottage",
     tagline: "The Ran Kesari signature.",
-    image: "/images/packages/royal-swiss.jpg",
+    image: BRAND.maharajaInterior,
     size: "20 × 20 ft",
     capacity: "2 – 3 Guests",
     ac: true,
@@ -93,7 +95,7 @@ export const packages = [
   {
     name: "Maharaja Suite Tent",
     tagline: "Royalty, in canvas.",
-    image: "/images/packages/maharaja-suite.jpg",
+    image: BRAND.royalTent,
     size: "24 × 28 ft",
     capacity: "Up to 4 Guests",
     ac: true,
@@ -113,7 +115,7 @@ export const packages = [
   {
     name: "Event Stay Infrastructure",
     tagline: "Modular hospitality at scale.",
-    image: "/images/packages/event-stay.jpg",
+    image: BRAND.weddingNight,
     size: "Custom",
     capacity: "50 – 500 Guests",
     ac: true,
@@ -132,7 +134,7 @@ export const packages = [
   {
     name: "Tent City Package",
     tagline: "An entire city of luxury, on demand.",
-    image: "/images/packages/tent-city.jpg",
+    image: BRAND.tentCity,
     size: "Multi-acre",
     capacity: "500+ Guests",
     ac: true,
@@ -238,19 +240,24 @@ export const testimonials = [
   }
 ];
 
-export const galleryImages: { src: string; alt: string; span?: "tall" | "wide" | "big" }[] = [
-  { src: "/images/gallery/01.jpg", alt: "Desert camp at golden hour", span: "big" },
-  { src: "/images/gallery/02.jpg", alt: "Luxury Swiss tent interior" },
-  { src: "/images/gallery/03.jpg", alt: "Royal dining setup", span: "wide" },
-  { src: "/images/gallery/04.jpg", alt: "Night camp under stars", span: "tall" },
-  { src: "/images/gallery/05.jpg", alt: "Maharaja suite veranda" },
-  { src: "/images/gallery/06.jpg", alt: "Wedding tent infrastructure", span: "wide" },
-  { src: "/images/gallery/07.jpg", alt: "Luxury washroom interior" },
-  { src: "/images/gallery/08.jpg", alt: "Outdoor lounge & firepit", span: "tall" },
-  { src: "/images/gallery/09.jpg", alt: "Tent city aerial" },
-  { src: "/images/gallery/10.jpg", alt: "Bridal suite tent", span: "big" },
-  { src: "/images/gallery/11.jpg", alt: "Dune-side breakfast" },
-  { src: "/images/gallery/12.jpg", alt: "Event stage & camp city", span: "wide" }
+/**
+ * Gallery — every brand photo gets a slot, arranged for visual rhythm
+ * (big · normal · wide · tall · normal · wide · normal · tall · big).
+ */
+export const galleryImages: {
+  src: string;
+  alt: string;
+  span?: "tall" | "wide" | "big";
+}[] = [
+  { src: BRAND.tentCity, alt: "Luxury tent city at twilight", span: "big" },
+  { src: BRAND.maharajaInterior, alt: "Maharaja suite interior with chandelier" },
+  { src: BRAND.festivalAerial, alt: "Aerial festival camp with fountain", span: "wide" },
+  { src: BRAND.royalTent, alt: "Royal Swiss tent at dramatic sunset", span: "tall" },
+  { src: BRAND.weddingLit, alt: "Wedding camp row at dusk" },
+  { src: BRAND.dining, alt: "Royal dining marquee", span: "wide" },
+  { src: BRAND.canopy, alt: "Premium canopy lounge at golden hour" },
+  { src: BRAND.weddingNight, alt: "Wedding camps lit at night", span: "tall" },
+  { src: BRAND.twinInterior, alt: "Luxury tent interior with twin beds", span: "big" }
 ];
 
 export const stats = [

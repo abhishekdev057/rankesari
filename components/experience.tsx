@@ -1,14 +1,15 @@
 import { Section } from "./section";
 import LuxeImage from "./image";
 import { Reveal } from "./reveal";
+import { BRAND } from "@/lib/brand-images";
 
 export default function Experience() {
   return (
     <Section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <LuxeImage
-          src="/images/experience/night-camp.jpg"
-          alt="Luxury camp under desert stars"
+          src={BRAND.weddingNight}
+          alt="Luxury camp lit at night under desert stars"
           className="h-full w-full"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/70 to-ink" />

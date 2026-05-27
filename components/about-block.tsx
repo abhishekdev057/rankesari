@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Section, SectionHeader } from "./section";
+import { Section } from "./section";
 import LuxeImage from "./image";
 import { Reveal } from "./reveal";
 import { stats } from "@/lib/data";
+import { BRAND } from "@/lib/brand-images";
 
 export default function AboutBlock() {
   return (
@@ -49,8 +50,8 @@ export default function AboutBlock() {
           <Reveal y={50}>
             <div className="relative h-[520px] sm:h-[600px]">
               <LuxeImage
-                src="/images/about/about-main.jpg"
-                alt="Luxury Swiss tent interior with brass accents"
+                src={BRAND.maharajaInterior}
+                alt="Luxury Swiss tent interior with chandelier and brass accents"
                 className="h-full w-full"
               />
               <div className="absolute -bottom-8 -left-6 hidden h-44 w-44 border border-gold/40 bg-ink-800/90 p-5 backdrop-blur-md sm:block">

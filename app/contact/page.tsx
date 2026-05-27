@@ -5,6 +5,7 @@ import { Section } from "@/components/section";
 import ContactForm from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
 import { site } from "@/lib/site";
+import { BRAND } from "@/lib/brand-images";
 
 export const metadata: Metadata = {
   title: "Contact — Begin Your Luxury Camp",
@@ -23,7 +24,7 @@ export default function ContactPage() {
           </>
         }
         subtitle="A consultation takes twenty minutes. A custom quotation, two days."
-        image="/images/contact/contact-hero.jpg"
+        image={BRAND.canopy}
       />
 
       <Section>

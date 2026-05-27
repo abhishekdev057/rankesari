@@ -8,6 +8,7 @@ import WhyUs from "@/components/why-us";
 import Process from "@/components/process";
 import CTABlock from "@/components/cta-block";
 import { stats } from "@/lib/data";
+import { BRAND } from "@/lib/brand-images";
 
 export const metadata: Metadata = {
   title: "About — Royal Camping Infrastructure",
@@ -26,7 +27,7 @@ export default function AboutPage() {
           </>
         }
         subtitle="We don't pitch tents. We install premium hospitality ecosystems — temporary, but never compromised."
-        image="/images/about/about-hero.jpg"
+        image={BRAND.canopy}
       />
 
       <Section>
@@ -68,8 +69,8 @@ export default function AboutPage() {
           <div className="lg:col-span-6">
             <Reveal y={40}>
               <LuxeImage
-                src="/images/about/about-1.jpg"
-                alt="Royal Swiss tent interior with hardwood floor"
+                src={BRAND.twinInterior}
+                alt="Luxury Swiss tent interior with block-printed walls and lanterns"
                 className="h-[520px] sm:h-[640px]"
               />
             </Reveal>

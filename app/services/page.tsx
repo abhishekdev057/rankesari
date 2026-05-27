@@ -5,6 +5,7 @@ import Process from "@/components/process";
 import CTABlock from "@/components/cta-block";
 import Marquee from "@/components/marquee";
 import { tentFeatures } from "@/lib/data";
+import { BRAND } from "@/lib/brand-images";
 
 export const metadata: Metadata = {
   title: "Services — Luxury Tent Infrastructure",
@@ -23,7 +24,7 @@ export default function ServicesPage() {
           </>
         }
         subtitle="Six signature offerings. One end-to-end team. Every infrastructure detail handled."
-        image="/images/services/services-hero.jpg"
+        image={BRAND.festivalAerial}
       />
       <ServicesGrid />
       <Marquee items={tentFeatures} />

@@ -28,8 +28,10 @@ npm start
 ## Adding your images
 
 The site uses graceful SVG placeholders until you drop in real photos.
-See **[`public/images/README.md`](./public/images/README.md)** for the
-complete manifest — every expected filename and where it surfaces in the UI.
+See **[`public/brand/README.md`](./public/brand/README.md)** for the
+complete manifest — the 9 brand photos + logo, their exact filenames,
+and every slot they appear in. Want to swap which photo goes where? Edit
+[`lib/brand-images.ts`](./lib/brand-images.ts).
 
 ---
 
