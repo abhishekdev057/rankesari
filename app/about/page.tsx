@@ -9,6 +9,7 @@ import Process from "@/components/process";
 import CTABlock from "@/components/cta-block";
 import { stats } from "@/lib/data";
 import { BRAND } from "@/lib/brand-images";
+import { cn } from "@/lib/cn";
 
 export const metadata: Metadata = {
   title: "About — Royal Camping Infrastructure",
@@ -125,11 +126,22 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="mt-20 grid grid-cols-2 gap-px border border-ivory/10 bg-ivory/10 lg:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="bg-ink-900 p-8 text-center sm:p-10">
-                <p className="font-display text-4xl gold-text sm:text-5xl">{s.value}</p>
-                <p className="mt-3 text-[11px] uppercase tracking-widest2 text-ivory/60">
+          <div className="mt-20 grid grid-cols-2 border border-gold/20 lg:grid-cols-4">
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className={cn(
+                  "flex h-full min-h-[180px] flex-col items-center justify-center bg-ink-900 px-6 py-10 text-center sm:px-8 sm:py-12",
+                  i % 2 === 1 && "border-l border-gold/15",
+                  i >= 2 && "border-t border-gold/15",
+                  "lg:border-t-0",
+                  i > 0 && "lg:border-l lg:border-gold/15"
+                )}
+              >
+                <p className="font-display text-4xl leading-none gold-text sm:text-5xl">
+                  {s.value}
+                </p>
+                <p className="mt-4 text-[11px] uppercase tracking-widest2 text-ivory/60">
                   {s.label}
                 </p>
               </div>

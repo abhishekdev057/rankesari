@@ -32,7 +32,7 @@ export default function Navbar() {
           : "bg-transparent"
       )}
     >
-      <div className="container-luxe flex h-[78px] items-center justify-between">
+      <div className="container-luxe flex h-[92px] items-center justify-between lg:h-[108px]">
         <Link href="/" aria-label="Ran Kesari home">
           <Logo />
         </Link>

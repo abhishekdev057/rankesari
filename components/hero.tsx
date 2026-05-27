@@ -61,8 +61,7 @@ export default function Hero() {
           className="mt-8 max-w-2xl text-base leading-relaxed text-ivory/75 sm:text-lg text-balance"
         >
           Premium Swiss tents, royal desert camps and end-to-end hospitality
-          infrastructure for weddings, festivals, retreats and tourism — built
-          where you need them, finished to five-star standards.
+          infrastructure for weddings, festivals, retreats and tourism.
         </motion.p>
 
         <motion.div
@@ -76,9 +75,6 @@ export default function Hero() {
           </Link>
           <Link href="/contact" className="btn-ghost">
             Book Consultation
-          </Link>
-          <Link href="/contact#quote" className="btn-ghost">
-            Get Quotation
           </Link>
         </motion.div>
 

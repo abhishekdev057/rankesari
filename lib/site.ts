@@ -11,8 +11,8 @@ export const site = {
     "https://wa.me/919602464121?text=Hello%20Ran%20Kesari%2C%20I%27d%20like%20to%20enquire%20about%20a%20luxury%20camp%20setup.",
   instagram: "https://instagram.com/ran.kesari",
   instagramHandle: "@ran.kesari",
-  location: "Jodhpur · Jaisalmer · Pan-India deployments",
-  address: "Rajasthan, India"
+  location: "Jaipur · Pan-India Deployments",
+  address: "Jaipur, Rajasthan, India"
 };
 
 export const nav = [

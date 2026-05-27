@@ -30,7 +30,7 @@ export default function Logo({
           onError={() => setPhotoFailed(true)}
           className={cn(
             "block w-auto select-none",
-            variant === "full" ? "h-12 sm:h-14" : "h-10"
+            variant === "full" ? "h-16 sm:h-20 lg:h-[88px]" : "h-12"
           )}
         />
       ) : (

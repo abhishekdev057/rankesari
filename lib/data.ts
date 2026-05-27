@@ -53,21 +53,21 @@ export const services = [
 
 export const packages = [
   {
-    name: "Classic Luxury Tent",
+    name: "Classic Swiss Tent",
     tagline: "Refined comfort. Effortless elegance.",
     image: BRAND.twinInterior,
-    size: "16 × 16 ft",
+    size: "14 × 28 ft",
     capacity: "2 Guests",
-    ac: true,
+    ac: "Optional",
     washroom: "Attached",
-    bed: "King bed",
+    bed: "Twin Single Beds",
     amenities: [
-      "Air conditioning",
       "Attached washroom",
       "Luxury bedding",
       "Premium lighting",
       "Wooden furniture",
-      "Carpeted flooring"
+      "Carpeted flooring",
+      "Air conditioning (optional)"
     ],
     bestFor: ["Tourism", "Couples retreats", "Boutique camps"]
   },
@@ -75,19 +75,19 @@ export const packages = [
     name: "Royal Swiss Cottage",
     tagline: "The Ran Kesari signature.",
     image: BRAND.maharajaInterior,
-    size: "20 × 20 ft",
+    size: "16 × 32 ft",
     capacity: "2 – 3 Guests",
-    ac: true,
+    ac: "Optional",
     washroom: "Attached Premium",
-    bed: "King bed + day bed",
+    bed: "Twin Single Beds",
     amenities: [
-      "Inverter AC",
+      "Carpeted flooring",
       "Premium attached washroom",
       "Dressing area",
-      "Sofa & seating",
       "Designer lighting",
-      "Hardwood flooring",
-      "Power backup"
+      "Inverter AC (optional)",
+      "Sofa & seating (optional)",
+      "Power backup (optional)"
     ],
     bestFor: ["Destination weddings", "Luxury travelers", "Heritage stays"],
     featured: true
@@ -98,7 +98,7 @@ export const packages = [
     image: BRAND.royalTent,
     size: "24 × 28 ft",
     capacity: "Up to 4 Guests",
-    ac: true,
+    ac: "Optional",
     washroom: "Twin Attached",
     bed: "King bed + living lounge",
     amenities: [
@@ -118,7 +118,7 @@ export const packages = [
     image: BRAND.weddingNight,
     size: "Custom",
     capacity: "50 – 500 Guests",
-    ac: true,
+    ac: "Optional",
     washroom: "Attached / Shared blocks",
     bed: "Single / Twin / King",
     amenities: [
@@ -137,7 +137,7 @@ export const packages = [
     image: BRAND.tentCity,
     size: "Multi-acre",
     capacity: "500+ Guests",
-    ac: true,
+    ac: "Optional",
     washroom: "Attached suites",
     bed: "All categories",
     amenities: [

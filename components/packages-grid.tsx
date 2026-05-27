@@ -53,7 +53,7 @@ export default function PackagesGrid({ compact = false }: { compact?: boolean })
                   <dl className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 text-[12px]">
                     <Spec label="Size" value={pkg.size} />
                     <Spec label="Capacity" value={pkg.capacity} />
-                    <Spec label="Climate" value={pkg.ac ? "AC + Heating" : "Non-AC"} />
+                    <Spec label="Air Conditioning" value={pkg.ac} />
                     <Spec label="Washroom" value={pkg.washroom} />
                     <Spec label="Bed Setup" value={pkg.bed} />
                   </dl>

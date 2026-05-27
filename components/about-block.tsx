@@ -4,6 +4,7 @@ import LuxeImage from "./image";
 import { Reveal } from "./reveal";
 import { stats } from "@/lib/data";
 import { BRAND } from "@/lib/brand-images";
+import { cn } from "@/lib/cn";
 
 export default function AboutBlock() {
   return (
@@ -70,19 +71,31 @@ export default function AboutBlock() {
         </div>
       </div>
 
-      <div className="container-luxe mt-24 grid grid-cols-2 gap-px border border-ivory/10 bg-ivory/10 lg:grid-cols-4">
-        {stats.map((s, i) => (
-          <Reveal key={s.label} delay={i * 0.08}>
-            <div className="bg-ink-900 p-8 text-center sm:p-10">
-              <p className="font-display text-4xl gold-text sm:text-5xl">
-                {s.value}
-              </p>
-              <p className="mt-3 text-[11px] uppercase tracking-widest2 text-ivory/60">
-                {s.label}
-              </p>
-            </div>
-          </Reveal>
-        ))}
+      <div className="container-luxe mt-24">
+        <div className="grid grid-cols-2 border border-gold/20 lg:grid-cols-4">
+          {stats.map((s, i) => (
+            <Reveal key={s.label} delay={i * 0.08}>
+              <div
+                className={cn(
+                  "flex h-full min-h-[180px] flex-col items-center justify-center bg-ink-900 px-6 py-10 text-center sm:px-8 sm:py-12",
+                  // Mobile (2 cols): left border on items 1 & 3, top border on items 2 & 3
+                  i % 2 === 1 && "border-l border-gold/15",
+                  i >= 2 && "border-t border-gold/15",
+                  // Desktop (4 cols): left border on items 1, 2, 3; no top border anywhere
+                  "lg:border-t-0",
+                  i > 0 && "lg:border-l lg:border-gold/15"
+                )}
+              >
+                <p className="font-display text-4xl leading-none gold-text sm:text-5xl">
+                  {s.value}
+                </p>
+                <p className="mt-4 text-[11px] uppercase tracking-widest2 text-ivory/60">
+                  {s.label}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </Section>
   );
